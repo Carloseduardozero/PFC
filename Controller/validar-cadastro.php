@@ -1,70 +1,68 @@
 <?php
 
+
+//Abertura do da sessão
+session_start();
+
+
+//Importação de outros arquivos, necessarios para ultilizar outros codigos
 require_once "../Model/conexao.php";
 require_once "../Model/Usuario.php";
 
 
+//Criação de objetos
 $con =   getConexao();
 $user = new Usuario();
 
 
-    $Nome =        filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-    $Email =      filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
-    $Informacoes = filter_input(INPUT_POST, 'info', FILTER_SANITIZE_SPECIAL_CHARS);
-    $Cpf =          filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_SPECIAL_CHARS);
-    $Jogo =       filter_input(INPUT_POST, 'Jogos', FILTER_SANITIZE_SPECIAL_CHARS);
-    $Imagem =                                            "imagens\perfil\user.png";
+    //Requisitando as informações do formulario
+    $nome =             filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+    $usuario =       filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_SPECIAL_CHARS);
+    $email =           filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
+    $senha1 =         filter_input(INPUT_POST, 'senha1', FILTER_SANITIZE_SPECIAL_CHARS);
+    $senha2 =         filter_input(INPUT_POST, 'senha2', FILTER_SANITIZE_SPECIAL_CHARS);
+  //$Imagem =                                                 "imagens\perfil\user.png";
 
-    //Caso as informações sejam default será atribuido um novo valor
-    if($Informacoes == ""){
-      $Informacoes = "Nenhuma informação...";
-    }
+  if($senha1 == $senha2){
 
-    //Criação da sessão com os valores informados pelo usuario
-    session_start();
-
-    $_SESSION['nome'] =               $Nome;
-    $_SESSION['email'] =             $Email;
-    $_SESSION['informacoes'] = $Informacoes;
-    $_SESSION['cpf'] =                 $Cpf;
-    $_SESSION['jogo'] =               $Jogo;
-    $_SESSION['imagem'] =           $Imagem;
-
-    /*Criação dos cookies, o que está entre aspas é o nome do cookie
-    setcookie('nome', $Nome,               time()+3600);
-    setcookie("email", $Email,             time()+3600);
-    setcookie("informacoes", $Informacoes, time()+3600);
-    setcookie("cpf", $Cpf,                 time()+3600);
-    setcookie("jogo", $Jogo,               time()+3600);
-    */
+    //Criação das sessões e atribuições dos sus respectivos valores
+    $_SESSION['nome'] =                   $nome;
+    $_SESSION['usuario'] =             $usuario;
+    $_SESSION['email'] =                 $email;
+    $_SESSION['senha'] =                $senha1;
+    //$_SESSION['imagem'] =             $Imagem;
 
 
     //Envio das informações pelo objeto
-    $user->               setNome($Nome);
-    $user->                 setCpf($Cpf);
-    $user->             setEmail($Email);
-    $user-> setInformacoes($Informacoes);
-    $user->               setJogo($Jogo);
+    $user->          setNome($_SESSION['nome']);
+    $user->    setUsuario($_SESSION['usuario']);
+    $user->        setEmail($_SESSION['email']);
+    $user->        setSenha($_SESSION['senha']);
 
+    
     //resgate das informações pelo objeto    
-    $Nome =               $user->getNome();
-    $Cpf =                 $user->getCpf();
-    $Email =             $user->getEmail();
-    $Informacoes = $user->getInformacoes();
-    $Jogo =               $user->getJogo();
-
-    $query = $con->prepare("INSERT INTO usuarios(email,cpf,nome,informacoes,jogofavorito,diretorio)
-     VALUES (:email,:cpf,:nome,:informacoes,:jogo,:imagem)");
+    $Nome =                    $user->getNome();
+    $Usuario =              $user->getUsuario();
+    $Email =                  $user->getEmail();
+    $Senha =                  $user->getSenha();
 
 
-    $query-> bindValue(":email",$Email);
-    $query-> bindValue(":cpf",$Cpf);
-    $query-> bindValue(":nome",$Nome);
-    $query-> bindValue(":informacoes",$Informacoes);
-    $query-> bindValue(":jogo",$Jogo);
-    $query-> bindValue(":imagem",$Imagem);
+    //Query reponsavel por preparar o codigo que insere as informações no banco
+    $query = $con->prepare("INSERT INTO usuarios
+    (nome,usuario,email,senha)VALUES (:nome,:usuario,:email,:senha)");
+
+
+    $query->           bindValue(":nome",$Nome);
+    $query->     bindValue(":usuario",$Usuario);
+    $query->         bindValue(":email",$Email);
+    $query->         bindValue(":senha",$Senha);
+  //$query-> bindValue(":imagem",$Imagem);
 
     $query->execute();
 
-
     header("location: ../View/feed.php");
+  }else{
+    $_SESSION['msg'] = "As senhas não são as mesmas";
+    
+    header("location: ../View/Cadastro.php");
+  }

@@ -5,7 +5,7 @@ session_start();
     $imagem = $_SESSION["imagem"];
   
   
-        if(!isset($_SESSION['cpf'])){
+        if(!isset($_SESSION['senha'])){
             header("location: index.php");
         }
 ?>
@@ -27,10 +27,10 @@ session_start();
         <div class="feed1">
             <h2 class="fonteFeed">O que deseja postar?</h2>
             <form method="POST" action="../Controller/postFeed.php" enctype="multipart/form-data">
-                <input type="text" width="320" height="240" name="comentario" max="1024" required=""><br><br>
-                <input type="file" name="arquivo"><br><br>
+                <input type="text" width="320" height="240" name="comentario" max="1024" required>
+                <input type="file" name="arquivo">
                 <input type="submit" value="Postar">    
-            </form><br>
+            </form>
             <?php
             if (isset($_SESSION['msg'])) {
                 echo $_SESSION['msg'];

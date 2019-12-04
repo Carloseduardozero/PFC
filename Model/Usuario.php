@@ -1,52 +1,52 @@
 <?php
 
 
-Class Usuario{
-  private        $Nome;
-  private       $Email;
-  private         $Cpf;
-  private $Informacoes;
-  private     $JogoFav;
-
-  function getNome() {
-      return $this->Nome;
-  }
-
-  function getEmail() {
-      return $this->Email;
-  }
-
-  function getCpf() {
-      return $this->Cpf;
-  }
-
-  function getInformacoes() {
-      return $this->Informacoes;
-  }
-
-  function setNome($Nome) {
-      $this->Nome = $Nome;
-  }
-
-  function setEmail($Email) {
-      $this->Email = $Email;
-  }
-
-  function setCpf($Cpf) {
-      $this->Cpf = $Cpf;
-  }
-
-  function setInformacoes($Informacoes) {
-      $this->Informacoes = $Informacoes;
-  }
+    Class Usuario{
+        
+        private        $Nome;
+        private     $Usuario;
+        private       $Email;
+        private       $Senha;
 
 
-  function getJogo() {
-      return $this->JogoFav;
-  }
+        //Metodos acessores
 
-  function setJogo($jogo) {
-      $this->JogoFav = $jogo;
-  }
 
-}
+            //Metodos Getters
+            function getNome() {
+                return $this->Nome;
+            }
+
+            function getUsuario() {
+                return $this->Usuario;
+            }
+
+            function getEmail() {
+                return $this->Email;
+            }
+
+            function getSenha() {
+                return $this->Senha;
+            }
+
+
+
+            //Metodos Setters
+            function setNome($Nome) {
+                $this->Nome = $Nome;
+            }
+
+            function setUsuario($Usuario) {
+                $this->Usuario = $Usuario;
+            }
+
+            function setEmail($Email) {
+                $this->Email = $Email;
+            }
+
+
+            function setSenha($Senha) {
+                $this->Senha = $Senha;
+            }
+
+    }
