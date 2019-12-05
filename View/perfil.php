@@ -1,43 +1,3 @@
-<?php
-require_once "../Model/conexao.php";
-
-
-session_start();
-
-  if(!isset($_SESSION['cpf'])){
-    header("location: index.php");
-  }
-  
-$imagem = $_SESSION["imagem"];
-$cpf =       $_SESSION['cpf'];
-
-
-$con = getConexao();
-
-$extensoes_padrao = array("png","jpg","jpeg","gif");
-
-  if(isset($_FILES['file'])){
-    $extensao = explode(".", $_FILES['file']['name'])[1];
-
-
-    if(in_array($extensao, $extensoes_padrao)){
-      $diretorio = "./imagens/perfil/";
-      $novo_nome = md5(time()).".".$extensao;
-      $imagem = $diretorio.$novo_nome;
-
-      move_uploaded_file($_FILES['file']['tmp_name'], $diretorio.$novo_nome);
-
-
-    $query = $con->prepare("UPDATE usuarios SET diretorio=:imagem WHERE cpf = :cpf");
-    $query-> bindValue(":imagem",$imagem);
-    $query-> bindValue(":cpf",$cpf);
-    $query->execute();
-
-    $_SESSION["imagem"] = $imagem;
-    }
-  }
-
-?>
 
 
 
@@ -56,7 +16,6 @@ $extensoes_padrao = array("png","jpg","jpeg","gif");
   <div class="imagem-perfil">
   
   <form action="" enctype="multipart/form-data" method="post">
-      <img src="<?php echo $imagem?>">
         <input type="file" name="file" id="file">
       <input type="submit" value="Enviar" id="enviar">
       </form>

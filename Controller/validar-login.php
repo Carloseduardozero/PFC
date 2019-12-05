@@ -52,10 +52,11 @@ $user = new Usuario();
             $_SESSION['usuario'] =             $valor['usuario'];
             $_SESSION['email'] =                 $valor['email'];
             $_SESSION['senha'] =                 $valor['senha'];
+            $_SESSION['arquivo'] =                            "";
             
           }
 
-            header("location: ../View/feed.php");
+            header("location: ../View/perfil.php");
         }else{
 
     header("location: ../View/index.php");
