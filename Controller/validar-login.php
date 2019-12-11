@@ -56,7 +56,7 @@ $user = new Usuario();
             
           }
 
-            header("location: ../View/perfil.php");
+            header("location: ../View/pagina-inicial.php");
         }else{
 
     header("location: ../View/index.php");
