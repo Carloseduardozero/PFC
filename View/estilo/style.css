@@ -1,0 +1,188 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    font-family: arial;
+    background-color: #cccccc;
+}
+
+ul{
+    list-style: none;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+nav{
+    background-color: #3399ff;
+    opacity: 0.9;
+    width: 300px;
+    height: 100%;
+    left: -300px;
+    position: absolute;
+    transition: all .5s;
+}
+.barra{
+    background-color: #3399ff;
+}
+
+input[type="checkbox"]:checked ~ nav
+{
+ transform: translateX(300px);   
+}
+
+ul{
+    top: 70px;
+    position: absolute;
+    width: 100%;
+}
+
+a{
+    display: block;
+    padding: 10px 5px;
+    color: white
+}
+
+a:hover{
+    background-color: white;
+    color: black;
+}
+
+label{
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
+
+li a{
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.fundinho{
+    background-color: white;
+    margin-left: 300px;
+    margin-right: 250px;
+    
+}
+
+.fundinho img:hover{
+    background-color: #3399ff;
+    color: black;
+}
+
+c img{
+   margin-top: 48px;
+   margin-left: 100px;
+   border-radius: 10px;
+}
+
+d img{
+    margin-top: 48px;
+   border-radius: 10px;
+}
+
+e img{
+    margin-top: 48px;
+
+   border-radius: 10px;
+   
+}
+
+f img{
+    margin-top: 30px;
+    margin-left: 100px;
+   
+   border-radius: 10px; 
+   padding-bottom: 20px;
+}
+g img{
+    margin-top: 30px;
+   border-radius: 10px;
+   padding-bottom: 20px;
+}
+h img{
+    margin-top: 30px;
+    
+   border-radius: 10px;
+   padding-bottom: 20px;
+}
+
+
+.barraZ{
+    background-color: #3399ff;
+    position: relative;
+    padding: 15px;
+}
+
+.barraZ x{
+    color: white;
+    font-family: Arial;
+    font-size: 14pt;
+    padding: 10px;
+}
+
+.fundao{
+    background-color: activecaption;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.nomis{
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 100px;
+}
+
+
+.mat{
+    padding-top: 100px;
+    padding-bottom: 195px;
+    background-color: white;
+}
+
+
+l:hover{
+    background-color: #3399ff;
+    color: black;
+}
+
+l{
+   display: inline;
+   font-size: 14pt;
+   color: black;
+   background-color: white;
+   padding-top: 200px;
+   padding-right: 12px;
+   padding-left: 12px;
+   border-radius: 10px;
+   margin-left: 100px;
+   padding-bottom: 10px;
+}
+
+ m{
+  display: inline;
+   font-size: 14pt;
+   color: black;
+   background-color: white;
+   padding-top: 200px;
+   padding-right: 12px;
+   padding-left: 12px;
+   margin-left: 30px;
+   border-radius: 10px;
+
+   padding-bottom: 10px;
+}
+
+m:hover{
+    background-color: #3399ff;
+    color: black;
+}
