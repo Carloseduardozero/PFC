@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Personagens>
+	<personagem>
+			<Nome>
+				Homem de ferro
+			</Nome>
+			<equipe>
+				Vingadores
+			</equipe>
+			<universo>
+				Marvel
+			</universo>
+		</personagem>
+		
+		<personagem>
+			<Nome>
+				Batman
+			</Nome>
+			<equipe>
+				Liga da justiça
+			</equipe>
+			<universo>
+				DC
+			</universo>
+	</personagem>
+	
+</Personagens>
