@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['senha'])){
+  header("location: ../View/index.php");
+}
+
+
 
 //Valores passados são o array e o objeto XML
 function array_para_xml( $data, &$xml_data){

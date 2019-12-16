@@ -1,6 +1,11 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+if(!isset($_SESSION['senha'])){
+  header("location: ../View/index.php");
+}
+?> 
 <html>
-    
     <head>
         <meta charset="UTF-8">
         <title></title>

@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['senha'])){
+  header("location: ../View/index.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
