@@ -33,7 +33,7 @@ session_destroy();
             
             <a class="link-cadastro" href="cadastro.php"> Já é cadastrado? Cadastre-se!</a> <p></p>
 
-            <a class="link-recuperarsenha" src="" >Recuperar senha!</a>
+            <a class="link-recuperarsenha" href="">Recuperar senha!</a>
             <!--<form method="POST" action="Cadastro.php">
                 <p></p>
                 <input class="btn-cadastrar" type="submit" value="Cadastrar">

@@ -25,8 +25,8 @@
   </center>
     <div class="fundao">
         <div class="mat">
-            <l href="pagina-inicial.php"><img src="./../img/imp.png" width="150px" height="180px">IMPORTAR</l>
-            <m href="Inicio.php"><img src="./../img/exp.png" width="150px" height="200px">EXPORTAR</m>
+            <a class="l" href="pagina-inicial.php"><img src="./../img/imp.png" width="150px" height="180px">IMPORTAR</a>
+            <a class="m" href="Inicio.php"><img src="./../img/exp.png" width="150px" height="200px">EXPORTAR</a>
         </div>
     </div>  
     <center>

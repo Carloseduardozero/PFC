@@ -156,7 +156,7 @@ l:hover{
     color: black;
 }
 
-l{
+.l{
    display: inline;
    font-size: 14pt;
    color: black;
@@ -169,7 +169,7 @@ l{
    padding-bottom: 10px;
 }
 
- m{
+.m{
   display: inline;
    font-size: 14pt;
    color: black;
