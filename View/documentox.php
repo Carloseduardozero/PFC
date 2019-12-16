@@ -1,14 +1,3 @@
-<?php
-
-session_start();
-
-if(!isset($_SESSION['senha'])){
-  header("location: ../View/index.php");
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +25,7 @@ if(!isset($_SESSION['senha'])){
   </center>
     <div class="fundao">
         <div class="mat">
-            <l href="Inicio.php"><img src="./../img/imp.png" width="150px" height="180px">IMPORTAR</l>
+            <l href="pagina-inicial.php"><img src="./../img/imp.png" width="150px" height="180px">IMPORTAR</l>
             <m href="Inicio.php"><img src="./../img/exp.png" width="150px" height="200px">EXPORTAR</m>
         </div>
     </div>  

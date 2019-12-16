@@ -82,7 +82,7 @@ $user = new Usuario();
 
         $query->execute();
 
-        header("location: ../View/pagina-inicial.php");
+        header("location: ../View/inicio.php");
         }else{
           $_SESSION["msg"] = "Os valores inseridos já estão cadastrados.";
           header("location: ../View/Cadastro.php");
